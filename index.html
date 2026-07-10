@@ -60,7 +60,7 @@ h1{font-size:20px; font-weight:600; margin:0 0 2px;}
 <h1>Spor programı</h1>
 <p class="sub" id="dateline"></p>
 
-<div class="banner warn">Row hareketi Chest-Supported Row ile değiştirildi — kalça menteşesi yok, sırt tamamen desteklenmiş.</div>
+<div class="banner warn">Row hareketi Chest-Supported Row'a çevrildi — düz benk de yeterli, incline gerekmez. Göğüs/karın benk üzerinde, ayaklar yerde, kollar aşağı sarkık, kalça hiç kırılmıyor.</div>
 <div class="banner danger">Bel ağrısı artarsa, bacağa/kalçaya vuran ağrı veya uyuşma olursa o günü durdur, ertesi güne ertele. Deadlift ve barbell squat programda hiç yok.</div>
 
 <div id="app"></div>
@@ -76,7 +76,7 @@ h1{font-size:20px; font-weight:600; margin:0 0 2px;}
 const PROGRAM = {
   A: { title: "Gün A — Upper Body Strength", type:"home", exercises: [
     {id:'bench1', name:'Bench Press', detail:{1:'10+10 kg, 3x8',2:'12+12 kg, 3x8-10',3:'18+18 kg, 3x6-8'}},
-    {id:'row1', name:'Chest-Supported Row', detail:{1:'Bar + 2x2 kg, 3x10',2:'Bar + 2x5 kg, 3x10',3:'Bar + 2x10 kg, 3x8-10'}},
+    {id:'row1', name:'Chest-Supported Row (düz benkte)', detail:{1:'Bar + 2x2 kg, 3x10, ayaklar yerde',2:'Bar + 2x5 kg, 3x10, ayaklar yerde',3:'Bar + 2x10 kg, 3x8-10, ayaklar yerde'}},
     {id:'pullup1', name:'Pull-ups (assisted/negative)', detail:{1:'3x5 negative/assisted',2:'3x3-5 full reps',3:'3x5-8 full reps'}},
     {id:'ohp1', name:'Seated Overhead Press', detail:{1:'Bar + 2x2 kg, 3x8-10',2:'Bar + 2x5 kg, 3x8-10',3:'Bar + 2x5-7 kg, 3x8-10'}},
     {id:'plank1', name:'Plank', detail:{1:'3x20 sec',2:'3x35 sec',3:'3x45-60 sec'}}
@@ -95,7 +95,7 @@ const PROGRAM = {
   D: { title:"Gün D — Full Body", type:"home", exercises:[
     {id:'sit2stand', name:'Sit-to-Stand', detail:{1:'3x10-15',2:'3x10-15',3:'3x10-15'}},
     {id:'bench2', name:'Bench Press', detail:{1:'10+10 kg, 3x8',2:'12+12 kg, 3x8-10',3:'18+18 kg, 3x6-8'}},
-    {id:'row2', name:'Chest-Supported Row', detail:{1:'Bar + 2x2 kg, 3x10',2:'Bar + 2x5 kg, 3x10',3:'Bar + 2x10 kg, 3x8-10'}},
+    {id:'row2', name:'Chest-Supported Row (düz benkte)', detail:{1:'Bar + 2x2 kg, 3x10, ayaklar yerde',2:'Bar + 2x5 kg, 3x10, ayaklar yerde',3:'Bar + 2x10 kg, 3x8-10, ayaklar yerde'}},
     {id:'ohp2', name:'Seated Overhead Press', detail:{1:'Bar + 2x2 kg, 3x8-10',2:'Bar + 2x5 kg, 3x8-10',3:'Bar + 2x5-7 kg, 3x8-10'}},
     {id:'march', name:'Front-Rack March (in place)', detail:{1:'Bar + 2x2 kg, 3x20 sec',2:'Bar + 2x5 kg, 3x30 sec',3:'Bar + 2x10 kg, 3x40 sec'}}
   ]},
@@ -145,7 +145,8 @@ const today = todayStr();
 const phase = getPhase(today);
 
 function ytLink(name){
-  return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(name + ' exercise proper form');
+  const clean = name.replace(/\([^)]*\)/g, '').trim();
+  return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(clean + ' exercise proper form');
 }
 
 function renderPicker(){
