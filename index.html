@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Spor Programı">
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAB80lEQVR4nO3cywnCQABFURV7SBMu7cQK7MIS7MIK7NGdKy8YJn4I56yTIYTLLN92Oh428Mru1x/A/xIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRyk/fgR1/vt/Ycvp/PIW2vy///NzUESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQttPxMHjErDkRvsl4C58iDpI4SOIgiYMkDpI4SOIgiYMkDtIC2+ez2D5/+sL2+SA3B0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHKQFtu9ZKzcHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRykB5DpozGs5N90AAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAB80lEQVR4nO3cywnCQABFURV7SBMu7cQK7MIS7MIK7NGdKy8YJn4I56yTIYTLLN92Oh428Mru1x/A/xIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRyk/fgR1/vt/Ycvp/PIW2vy///NzUESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQttPxMHjErDkRvsl4C58iDpI4SOIgiYMkDpI4SOIgiYMkDtIC2+ez2D5/+sL2+SA3B0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEFaYPuctXJzkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHKQFtu9ZKzcHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRykB5DpozGs5N90AAAAAElFTkSuQmCC">
 <title>Spor Programı</title>
 <style>
 :root{
@@ -26,14 +26,19 @@
 body{
   margin:0; background:var(--bg); color:var(--text);
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;
-  padding:calc(env(safe-area-inset-top) + 16px) 16px calc(env(safe-area-inset-bottom) + 24px);
+  padding:calc(env(safe-area-inset-top) + 16px) 16px 100px;
   max-width:520px; margin-left:auto; margin-right:auto;
 }
 h1{font-size:20px; font-weight:600; margin:0 0 2px;}
-.sub{font-size:13px; color:var(--muted); margin:0 0 16px;}
+.sub{font-size:13px; color:var(--muted); margin:0 0 14px;}
+.tabs{display:flex; gap:6px; margin-bottom:14px;}
+.tab{
+  flex:1; text-align:center; padding:10px 0; border-radius:10px; font-size:14px; font-weight:600;
+  background:var(--card); border:0.5px solid var(--border); color:var(--muted); cursor:pointer;
+}
+.tab.active{background:var(--accent); color:#fff; border-color:var(--accent);}
 .card{background:var(--card); border:0.5px solid var(--border); border-radius:14px; padding:14px 16px; margin-bottom:12px;}
 .banner{border-radius:14px; padding:12px 14px; margin-bottom:12px; font-size:13px; line-height:1.5;}
-.banner.warn{background:var(--warn-bg); color:var(--warn);}
 .banner.danger{background:var(--danger-bg); color:var(--danger);}
 .btn{
   display:block; width:100%; text-align:center; padding:14px; border-radius:12px;
@@ -41,18 +46,40 @@ h1{font-size:20px; font-weight:600; margin:0 0 2px;}
   font-size:16px; font-weight:600; margin-bottom:10px; cursor:pointer;
 }
 .btn.primary{background:var(--accent); color:#fff; border:none;}
-.btn.small{width:auto; display:inline-block; padding:8px 14px; font-size:13px; font-weight:500; margin:0;}
-.row{display:flex; align-items:flex-start; gap:10px; padding:10px 0; border-bottom:0.5px solid var(--border);}
-.row:last-child{border-bottom:none;}
-.row input[type=checkbox]{width:22px; height:22px; margin-top:2px; flex-shrink:0;}
+.exrow{padding:12px 0; border-bottom:0.5px solid var(--border);}
+.exrow:last-child{border-bottom:none;}
+.exhead{display:flex; justify-content:space-between; align-items:baseline; gap:8px;}
 .exname{font-size:15px; font-weight:600;}
+.exname.done{color:var(--accent);}
 .exdetail{font-size:13px; color:var(--muted); margin-top:2px;}
-.exlink{font-size:12px; color:var(--accent); text-decoration:none; white-space:nowrap; padding-top:2px;}
-.progress{font-size:13px; color:var(--muted); margin-bottom:10px;}
-.tag{display:inline-block; font-size:11px; font-weight:600; padding:3px 9px; border-radius:8px; background:var(--accent-bg); color:var(--accent); margin-bottom:8px;}
-.histrow{display:flex; justify-content:space-between; font-size:13px; padding:6px 0; border-bottom:0.5px solid var(--border);}
+.exlink{font-size:12px; color:var(--accent); text-decoration:none; white-space:nowrap;}
+.pills{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;}
+.pill{
+  width:44px; height:44px; border-radius:50%; border:1.5px solid var(--border);
+  background:var(--card); color:var(--muted); font-size:14px; font-weight:600;
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+}
+.pill.done{background:var(--accent); color:#fff; border-color:var(--accent);}
+.pbarwrap{height:6px; background:var(--border); border-radius:3px; margin:10px 0 14px; overflow:hidden;}
+.pbar{height:100%; background:var(--accent); border-radius:3px; transition:width .3s;}
+.progress{font-size:13px; color:var(--muted);}
+.tag{display:inline-block; font-size:11px; font-weight:600; padding:3px 9px; border-radius:8px; background:var(--accent-bg); color:var(--accent); margin-bottom:6px;}
+.statgrid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:12px;}
+.stat{background:var(--card); border:0.5px solid var(--border); border-radius:12px; padding:12px; text-align:center;}
+.statnum{font-size:22px; font-weight:700; color:var(--accent);}
+.statlabel{font-size:11px; color:var(--muted); margin-top:2px;}
+.histrow{display:flex; justify-content:space-between; font-size:13px; padding:8px 0; border-bottom:0.5px solid var(--border);}
 .histrow:last-child{border-bottom:none;}
 .footer-link{font-size:12px; color:var(--muted); text-align:center; margin-top:20px; cursor:pointer;}
+#resttimer{
+  position:fixed; left:0; right:0; bottom:0; display:none;
+  background:var(--accent); color:#fff; padding:14px 20px calc(env(safe-area-inset-bottom) + 14px);
+  font-size:16px; font-weight:600; text-align:center;
+}
+#resttimer button{
+  background:rgba(255,255,255,.25); border:none; color:#fff; font-size:13px; font-weight:600;
+  padding:6px 14px; border-radius:8px; margin-left:12px; cursor:pointer;
+}
 </style>
 </head>
 <body>
@@ -60,58 +87,57 @@ h1{font-size:20px; font-weight:600; margin:0 0 2px;}
 <h1>Spor programı</h1>
 <p class="sub" id="dateline"></p>
 
-<div class="banner warn">Row hareketi Chest-Supported Row'a çevrildi — düz bench de yeterli, incline gerekmez. Göğüs/karın bench üzerinde, ayaklar yerde, kollar aşağı sarkık, kalça hiç kırılmıyor.</div>
-<div class="banner danger">Bel ağrısı artarsa, bacağa/kalçaya vuran ağrı veya uyuşma olursa o günü durdur, ertesi güne ertele. Deadlift ve barbell squat programda hiç yok.</div>
-
-<div id="app"></div>
-
-<div class="card" id="historyCard" style="display:none;">
-  <div class="tag">Geçmiş</div>
-  <div id="historyList"></div>
+<div class="tabs">
+  <div class="tab active" data-tab="today">Bugün</div>
+  <div class="tab" data-tab="history">Geçmiş</div>
+  <div class="tab" data-tab="program">Program</div>
 </div>
 
+<div id="view"></div>
 <div class="footer-link" id="resetLink">Tüm verileri sıfırla</div>
+
+<div id="resttimer"><span id="restlabel"></span><button id="skiprest">Geç</button></div>
 
 <script>
 const PROGRAM = {
-  A: { title: "Gün A — Upper Body Strength", type:"home", exercises: [
-    {id:'bench1', name:'Bench Press', detail:{1:'10+10 kg, 3x8',2:'12+12 kg, 3x8-10',3:'18+18 kg, 3x6-8'}},
-    {id:'row1', name:'Chest-Supported Row (düz bench)', detail:{1:'Bar + 2x2 kg, 3x10, ayaklar yerde',2:'Bar + 2x5 kg, 3x10, ayaklar yerde',3:'Bar + 2x10 kg, 3x8-10, ayaklar yerde'}},
-    {id:'pullup1', name:'Pull-ups (assisted/negative)', detail:{1:'3x5 negative/assisted',2:'3x3-5 full reps',3:'3x5-8 full reps'}},
-    {id:'ohp1', name:'Seated Overhead Press', detail:{1:'Bar + 2x2 kg, 3x8-10',2:'Bar + 2x5 kg, 3x8-10',3:'Bar + 2x5-7 kg, 3x8-10'}},
-    {id:'plank1', name:'Plank', detail:{1:'3x20 sec',2:'3x35 sec',3:'3x45-60 sec'}}
+  A: { title: "Gün A — Upper Body Strength", exercises: [
+    {id:'bench1', name:'Bench Press', sets:3, detail:{1:'10+10 kg, 8 tekrar',2:'12+12 kg, 8-10 tekrar',3:'18+18 kg, 6-8 tekrar'}},
+    {id:'pullup1', name:'Pull-ups (assisted/negative)', sets:4, detail:{1:'5 negatif/asisted',2:'3-5 tam tekrar',3:'5-8 tam tekrar'}},
+    {id:'hang1', name:'Dead Hang', sets:3, detail:{1:'15-20 sn',2:'25-30 sn',3:'35-45 sn'}},
+    {id:'ohp1', name:'Seated Overhead Press', sets:3, detail:{1:'Bar + 2x2 kg, 8-10 tekrar',2:'Bar + 2x5 kg, 8-10 tekrar',3:'Bar + 2x5-7 kg, 8-10 tekrar'}},
+    {id:'plank1', name:'Plank', sets:3, detail:{1:'20 sn',2:'35 sn',3:'45-60 sn'}}
   ]},
-  B: { title:"Gün B — Core & Hips", type:"home", exercises:[
-    {id:'deadbug', name:'Dead Bug', detail:{1:'3x8/side',2:'3x10/side',3:'3x12/side'}},
-    {id:'birddog', name:'Bird Dog', detail:{1:'3x8/side',2:'3x10/side',3:'3x12/side'}},
-    {id:'glutebridge', name:'Glute Bridge', detail:{1:'3x12',2:'3x15',3:'3x15 (single-leg)'}},
-    {id:'sideplank', name:'Side Plank', detail:{1:'3x20 sec/side',2:'3x30 sec/side',3:'3x40 sec/side'}},
-    {id:'catcowB', name:'Cat-Cow', detail:{1:'10 reps',2:'10 reps',3:'10 reps'}}
+  B: { title:"Gün B — Core & Hips", exercises:[
+    {id:'deadbug', name:'Dead Bug', sets:3, detail:{1:'8 tekrar/taraf',2:'10 tekrar/taraf',3:'12 tekrar/taraf'}},
+    {id:'birddog', name:'Bird Dog', sets:3, detail:{1:'8 tekrar/taraf',2:'10 tekrar/taraf',3:'12 tekrar/taraf'}},
+    {id:'glutebridge', name:'Glute Bridge', sets:3, detail:{1:'12 tekrar',2:'15 tekrar',3:'15 tekrar (tek bacak)'}},
+    {id:'sideplank', name:'Side Plank', sets:3, detail:{1:'20 sn/taraf',2:'30 sn/taraf',3:'40 sn/taraf'}},
+    {id:'catcowB', name:'Cat-Cow', sets:1, detail:{1:'10 tekrar',2:'10 tekrar',3:'10 tekrar'}}
   ]},
-  C: { title:"Gün C — Conditioning", type:"home", exercises:[
-    {id:'walk', name:'Brisk Walk / Cycling', detail:{1:'20-25 min',2:'30 min',3:'35-40 min + intervals'}},
-    {id:'corefinish', name:'Plank + Dead Bug Finisher', detail:{1:'2 rounds',2:'2 rounds',3:'2 rounds'}}
+  C: { title:"Gün C — Conditioning", exercises:[
+    {id:'walk', name:'Brisk Walk / Cycling', sets:1, detail:{1:'20-25 dk',2:'30 dk',3:'35-40 dk + tempo aralıkları'}},
+    {id:'corefinish', name:'Plank + Dead Bug Finisher', sets:2, detail:{1:'plank 20 sn + dead bug 8/taraf',2:'plank 30 sn + dead bug 8/taraf',3:'plank 40 sn + dead bug 10/taraf'}}
   ]},
-  D: { title:"Gün D — Full Body", type:"home", exercises:[
-    {id:'sit2stand', name:'Sit-to-Stand', detail:{1:'3x10-15',2:'3x10-15',3:'3x10-15'}},
-    {id:'bench2', name:'Bench Press', detail:{1:'10+10 kg, 3x8',2:'12+12 kg, 3x8-10',3:'18+18 kg, 3x6-8'}},
-    {id:'row2', name:'Chest-Supported Row (düz bench)', detail:{1:'Bar + 2x2 kg, 3x10, ayaklar yerde',2:'Bar + 2x5 kg, 3x10, ayaklar yerde',3:'Bar + 2x10 kg, 3x8-10, ayaklar yerde'}},
-    {id:'ohp2', name:'Seated Overhead Press', detail:{1:'Bar + 2x2 kg, 3x8-10',2:'Bar + 2x5 kg, 3x8-10',3:'Bar + 2x5-7 kg, 3x8-10'}},
-    {id:'march', name:'Front-Rack March (in place)', detail:{1:'Bar + 2x2 kg, 3x20 sec',2:'Bar + 2x5 kg, 3x30 sec',3:'Bar + 2x10 kg, 3x40 sec'}}
+  D: { title:"Gün D — Full Body", exercises:[
+    {id:'sit2stand', name:'Sit-to-Stand', sets:3, detail:{1:'10-15 tekrar',2:'10-15 tekrar',3:'10-15 tekrar'}},
+    {id:'bench2', name:'Bench Press', sets:3, detail:{1:'10+10 kg, 8 tekrar',2:'12+12 kg, 8-10 tekrar',3:'18+18 kg, 6-8 tekrar'}},
+    {id:'pullup2', name:'Pull-ups (assisted/negative)', sets:3, detail:{1:'5 negatif/asisted',2:'3-5 tam tekrar',3:'5-8 tam tekrar'}},
+    {id:'ohp2', name:'Seated Overhead Press', sets:3, detail:{1:'Bar + 2x2 kg, 8-10 tekrar',2:'Bar + 2x5 kg, 8-10 tekrar',3:'Bar + 2x5-7 kg, 8-10 tekrar'}},
+    {id:'march', name:'Front-Rack March (in place)', sets:3, detail:{1:'Bar + 2x2 kg, 20 sn',2:'Bar + 2x5 kg, 30 sn',3:'Bar + 2x10 kg, 40 sn'}}
   ]},
-  E: { title:"Gün E — Yoga & Mobility", type:"home", exercises:[
-    {id:'catcowE', name:'Cat-Cow', detail:{1:'10 reps',2:'10 reps',3:'10 reps'}},
-    {id:'childspose', name:"Child's Pose", detail:{1:'60 sec',2:'60 sec',3:'60 sec'}},
-    {id:'cobra', name:'Cobra Stretch', detail:{1:'5x10 sec',2:'5x10 sec',3:'5x10 sec'}},
-    {id:'supinepigeon', name:'Supine Pigeon Stretch', detail:{1:'45 sec/side',2:'45 sec/side',3:'45 sec/side'}},
-    {id:'breathing', name:'Diaphragmatic Breathing', detail:{1:'5 min',2:'5 min',3:'5 min'}}
+  E: { title:"Gün E — Yoga & Mobility", exercises:[
+    {id:'catcowE', name:'Cat-Cow', sets:1, detail:{1:'10 tekrar',2:'10 tekrar',3:'10 tekrar'}},
+    {id:'childspose', name:"Child's Pose", sets:1, detail:{1:'60 sn',2:'60 sn',3:'60 sn'}},
+    {id:'cobra', name:'Cobra Stretch', sets:5, detail:{1:'10 sn',2:'10 sn',3:'10 sn'}},
+    {id:'supinepigeon', name:'Supine Pigeon Stretch', sets:2, detail:{1:'45 sn/taraf',2:'45 sn/taraf',3:'45 sn/taraf'}},
+    {id:'breathing', name:'Diaphragmatic Breathing', sets:1, detail:{1:'5 dk',2:'5 dk',3:'5 dk'}}
   ]},
-  O: { title:"Ofis günü — Quick Routine (10-15 dk)", type:"office", exercises:[
-    {id:'owalk', name:'Brisk Walk', detail:{1:'5 min',2:'5 min',3:'5 min'}},
-    {id:'ocatcow', name:'Cat-Cow', detail:{1:'10 reps',2:'10 reps',3:'10 reps'}},
-    {id:'odeadbug', name:'Dead Bug', detail:{1:'2x8/side',2:'2x8/side',3:'2x8/side'}},
-    {id:'ohipflexor', name:'Hip Flexor Stretch (desk-supported)', detail:{1:'30 sec/side',2:'30 sec/side',3:'30 sec/side'}},
-    {id:'obreath', name:'Diaphragmatic Breathing', detail:{1:'2 min',2:'2 min',3:'2 min'}}
+  O: { title:"Ofis günü — Quick Routine (10-15 dk)", exercises:[
+    {id:'owalk', name:'Brisk Walk', sets:1, detail:{1:'5 dk',2:'5 dk',3:'5 dk'}},
+    {id:'ocatcow', name:'Cat-Cow', sets:1, detail:{1:'10 tekrar',2:'10 tekrar',3:'10 tekrar'}},
+    {id:'odeadbug', name:'Dead Bug', sets:2, detail:{1:'8 tekrar/taraf',2:'8 tekrar/taraf',3:'8 tekrar/taraf'}},
+    {id:'ohipflexor', name:'Hip Flexor Stretch', sets:2, detail:{1:'30 sn/taraf',2:'30 sn/taraf',3:'30 sn/taraf'}},
+    {id:'obreath', name:'Diaphragmatic Breathing', sets:1, detail:{1:'2 dk',2:'2 dk',3:'2 dk'}}
   ]}
 };
 const ROTATION = ['A','B','C','D','E'];
@@ -120,27 +146,52 @@ const PHASES = [
   {id:2, label:'Faz 2', start:'2026-08-07', end:'2026-09-03'},
   {id:3, label:'Faz 3', start:'2026-09-04', end:'2026-10-01'}
 ];
-const STORAGE_KEY = 'belProgramState_v1';
+const KEY_V2 = 'sporProgramState_v2';
+const KEY_V1 = 'belProgramState_v1';
+const REST_SECONDS = 75;
 
 function todayStr(){
   const d = new Date();
   return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 }
-function getPhase(dateStr){
-  for (const p of PHASES){ if (dateStr >= p.start && dateStr <= p.end) return p; }
-  if (dateStr < PHASES[0].start) return PHASES[0];
-  return PHASES[PHASES.length-1];
+function getPhase(ds){
+  for (const p of PHASES){ if (ds >= p.start && ds <= p.end) return p; }
+  return ds < PHASES[0].start ? PHASES[0] : PHASES[PHASES.length-1];
+}
+function migrateV1(){
+  try{
+    const old = JSON.parse(localStorage.getItem(KEY_V1));
+    if (!old || !old.history) return null;
+    const hist = {};
+    for (const ds in old.history){
+      const e = old.history[ds];
+      const setsDone = {};
+      const day = PROGRAM[e.dayKey];
+      if (day && Array.isArray(e.done)){
+        e.done.forEach(id => {
+          const ex = day.exercises.find(x => x.id === id);
+          if (ex) setsDone[id] = ex.sets;
+        });
+      }
+      hist[ds] = {dayType:e.dayType, dayKey:e.dayKey, setsDone, finished:!!e.finished};
+    }
+    return {rotationIndex: old.rotationIndex || 0, history: hist};
+  }catch(err){ return null; }
 }
 function loadState(){
   try{
-    const s = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    const s = JSON.parse(localStorage.getItem(KEY_V2));
     if (s && typeof s.rotationIndex === 'number' && s.history) return s;
   }catch(e){}
+  const migrated = migrateV1();
+  if (migrated){ localStorage.setItem(KEY_V2, JSON.stringify(migrated)); return migrated; }
   return {rotationIndex:0, history:{}};
 }
-function saveState(s){ localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
+function saveState(){ localStorage.setItem(KEY_V2, JSON.stringify(state)); }
 
 let state = loadState();
+let activeTab = 'today';
+let restInterval = null;
 const today = todayStr();
 const phase = getPhase(today);
 
@@ -148,131 +199,206 @@ function ytLink(name){
   const clean = name.replace(/\([^)]*\)/g, '').trim();
   return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(clean + ' exercise proper form');
 }
-
-function renderPicker(){
-  const app = document.getElementById('app');
-  app.innerHTML =
-    '<div class="card">' +
-    '<div class="tag">' + phase.label + '</div>' +
-    '<p style="font-size:14px; margin:6px 0 14px;">Bugün ofis günü mü, ev günü mü?</p>' +
-    '<button class="btn primary" id="pickHome">Ev günü</button>' +
-    '<button class="btn" id="pickOffice">Ofis günü</button>' +
-    '</div>';
-  document.getElementById('pickHome').onclick = () => selectDay('home');
-  document.getElementById('pickOffice').onclick = () => selectDay('office');
+function dayTotals(entry){
+  const day = PROGRAM[entry.dayKey];
+  let total = 0, done = 0;
+  day.exercises.forEach(ex => { total += ex.sets; done += Math.min(entry.setsDone[ex.id] || 0, ex.sets); });
+  return {total, done};
 }
-
-function selectDay(kind){
-  let dayKey;
-  if (kind === 'office'){
-    dayKey = 'O';
-  } else {
-    dayKey = ROTATION[state.rotationIndex % ROTATION.length];
-    state.rotationIndex = (state.rotationIndex + 1) % ROTATION.length;
-  }
-  state.history[today] = {
-    dayType: kind, dayKey, done: [], total: PROGRAM[dayKey].exercises.length, finished: false
-  };
-  saveState(state);
-  renderWorkout();
-}
-
-function resetToday(){
-  const entry = state.history[today];
-  if (entry && entry.dayType === 'home'){
-    state.rotationIndex = (state.rotationIndex - 1 + ROTATION.length) % ROTATION.length;
-  }
-  delete state.history[today];
-  saveState(state);
-  renderPicker();
-}
-
-function toggleExercise(exId){
-  const entry = state.history[today];
-  const idx = entry.done.indexOf(exId);
-  if (idx === -1) entry.done.push(exId); else entry.done.splice(idx,1);
-  saveState(state);
-  renderWorkout();
-}
-
-function finishDay(){
-  state.history[today].finished = true;
-  saveState(state);
-  renderWorkout();
-}
-
 function computeStreak(){
   let streak = 0;
   let d = new Date();
   while (true){
     const ds = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-    const entry = state.history[ds];
-    if (entry && entry.finished){ streak++; d.setDate(d.getDate()-1); }
+    const e = state.history[ds];
+    if (e && e.finished){ streak++; d.setDate(d.getDate()-1); }
     else if (ds === today){ d.setDate(d.getDate()-1); continue; }
     else break;
   }
   return streak;
 }
+function weekCount(){
+  let c = 0;
+  const d = new Date();
+  for (let i=0;i<7;i++){
+    const ds = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    if (state.history[ds] && state.history[ds].finished) c++;
+    d.setDate(d.getDate()-1);
+  }
+  return c;
+}
+function totalCount(){
+  return Object.values(state.history).filter(e => e.finished).length;
+}
 
-function renderWorkout(){
+function startRest(){
+  clearInterval(restInterval);
+  let left = REST_SECONDS;
+  const bar = document.getElementById('resttimer');
+  const label = document.getElementById('restlabel');
+  bar.style.display = 'block';
+  label.textContent = 'Dinlen: ' + left + ' sn';
+  restInterval = setInterval(() => {
+    left--;
+    if (left <= 0){ stopRest(); }
+    else label.textContent = 'Dinlen: ' + left + ' sn';
+  }, 1000);
+}
+function stopRest(){
+  clearInterval(restInterval);
+  document.getElementById('resttimer').style.display = 'none';
+}
+
+function tapSet(exId, totalSets){
   const entry = state.history[today];
+  const cur = entry.setsDone[exId] || 0;
+  if (cur >= totalSets){ entry.setsDone[exId] = 0; }
+  else {
+    entry.setsDone[exId] = cur + 1;
+    const t = dayTotals(entry);
+    if (t.done < t.total) startRest(); else stopRest();
+  }
+  saveState();
+  render();
+}
+
+function selectDay(kind){
+  let dayKey;
+  if (kind === 'office'){ dayKey = 'O'; }
+  else {
+    dayKey = ROTATION[state.rotationIndex % ROTATION.length];
+    state.rotationIndex = (state.rotationIndex + 1) % ROTATION.length;
+  }
+  state.history[today] = {dayType:kind, dayKey, setsDone:{}, finished:false};
+  saveState();
+  render();
+}
+function resetToday(){
+  const e = state.history[today];
+  if (e && e.dayType === 'home'){
+    state.rotationIndex = (state.rotationIndex - 1 + ROTATION.length) % ROTATION.length;
+  }
+  delete state.history[today];
+  stopRest();
+  saveState();
+  render();
+}
+function finishDay(){
+  state.history[today].finished = true;
+  stopRest();
+  saveState();
+  render();
+}
+
+function renderToday(){
+  const entry = state.history[today];
+  if (!entry){
+    return '<div class="card">' +
+      '<div class="tag">' + phase.label + '</div>' +
+      '<p style="font-size:14px; margin:6px 0 14px;">Bugün ofis günü mü, ev günü mü?</p>' +
+      '<button class="btn primary" id="pickHome">Ev günü</button>' +
+      '<button class="btn" id="pickOffice">Ofis günü</button>' +
+      '</div>';
+  }
   const day = PROGRAM[entry.dayKey];
-  const app = document.getElementById('app');
+  const t = dayTotals(entry);
+  const pct = t.total ? Math.round(100 * t.done / t.total) : 0;
   let rows = day.exercises.map(ex => {
-    const checked = entry.done.includes(ex.id) ? 'checked' : '';
-    return '<div class="row">' +
-      '<input type="checkbox" ' + checked + ' data-ex="' + ex.id + '">' +
-      '<div style="flex:1;">' +
-        '<div class="exname">' + ex.name + '</div>' +
-        '<div class="exdetail">' + ex.detail[phase.id] + '</div>' +
-      '</div>' +
-      '<a class="exlink" href="' + ytLink(ex.name) + '" target="_blank" rel="noopener">nasıl?</a>' +
-    '</div>';
+    const done = entry.setsDone[ex.id] || 0;
+    let pills = '';
+    for (let i=1; i<=ex.sets; i++){
+      pills += '<div class="pill' + (i <= done ? ' done' : '') + '" data-ex="' + ex.id + '" data-sets="' + ex.sets + '">' + i + '</div>';
+    }
+    return '<div class="exrow">' +
+      '<div class="exhead"><span class="exname' + (done >= ex.sets ? ' done' : '') + '">' + ex.name + '</span>' +
+      '<a class="exlink" href="' + ytLink(ex.name) + '" target="_blank" rel="noopener">nasıl?</a></div>' +
+      '<div class="exdetail">' + ex.detail[phase.id] + '</div>' +
+      '<div class="pills">' + pills + '</div>' +
+      '</div>';
   }).join('');
-  const doneCount = entry.done.length;
-  app.innerHTML =
-    '<div class="card">' +
-    '<div class="tag">' + phase.label + ' · ' + (entry.dayType === 'office' ? 'Ofis günü' : day.title) + '</div>' +
-    '<div class="progress">' + doneCount + '/' + entry.total + ' tamamlandı</div>' +
+  return '<div class="card">' +
+    '<div class="tag">' + phase.label + ' · ' + day.title + '</div>' +
+    '<div class="progress">' + t.done + '/' + t.total + ' set · %' + pct + '</div>' +
+    '<div class="pbarwrap"><div class="pbar" style="width:' + pct + '%"></div></div>' +
     rows +
     (entry.finished
       ? '<p style="color:var(--accent); font-weight:600; margin:14px 0 0;">Bugün tamamlandı. Seri: ' + computeStreak() + ' gün</p>'
       : '<button class="btn primary" id="finishBtn" style="margin-top:14px;">Günü bitir</button>') +
     '</div>' +
-    '<div class="footer-link" id="changeToday">Yanlış seçim mi yaptın? Sıfırla</div>';
-  day.exercises.forEach(ex => {
-    document.querySelector('[data-ex="' + ex.id + '"]').onchange = () => toggleExercise(ex.id);
-  });
-  if (!entry.finished) document.getElementById('finishBtn').onclick = finishDay;
-  document.getElementById('changeToday').onclick = resetToday;
+    '<div class="footer-link" id="changeToday">Yanlış seçim mi yaptın? Bugünü sıfırla</div>';
 }
 
 function renderHistory(){
-  const dates = Object.keys(state.history).sort().reverse().slice(0,14);
-  if (dates.length === 0) return;
-  const card = document.getElementById('historyCard');
-  const list = document.getElementById('historyList');
-  card.style.display = 'block';
-  list.innerHTML = dates.map(ds => {
+  const dates = Object.keys(state.history).sort().reverse();
+  let stats = '<div class="statgrid">' +
+    '<div class="stat"><div class="statnum">' + computeStreak() + '</div><div class="statlabel">Günlük seri</div></div>' +
+    '<div class="stat"><div class="statnum">' + weekCount() + '/7</div><div class="statlabel">Son 7 gün</div></div>' +
+    '<div class="stat"><div class="statnum">' + totalCount() + '</div><div class="statlabel">Toplam</div></div>' +
+    '</div>';
+  if (dates.length === 0) return stats + '<div class="card"><p style="font-size:14px; color:var(--muted); margin:0;">Henüz kayıt yok.</p></div>';
+  const rows = dates.slice(0,30).map(ds => {
     const e = state.history[ds];
+    const t = dayTotals(e);
     const label = e.dayType === 'office' ? 'Ofis' : ('Gün ' + e.dayKey);
-    const status = e.finished ? (e.done.length + '/' + e.total + ' ✓') : (e.done.length + '/' + e.total);
+    const status = t.done + '/' + t.total + ' set' + (e.finished ? ' ✓' : '');
     return '<div class="histrow"><span>' + ds + ' · ' + label + '</span><span>' + status + '</span></div>';
   }).join('');
+  return stats + '<div class="card">' + rows + '</div>';
 }
 
+function renderProgram(){
+  let html = '<div class="card"><div class="tag">' + phase.label + ' aktif</div>' +
+    PHASES.map(p => '<div class="histrow"><span>' + p.label + '</span><span>' + p.start + ' → ' + p.end + '</span></div>').join('') +
+    '</div>';
+  for (const key of [...ROTATION, 'O']){
+    const day = PROGRAM[key];
+    html += '<div class="card"><div class="tag">' + day.title + '</div>' +
+      day.exercises.map(ex =>
+        '<div class="histrow"><span>' + ex.name + '</span><span>' + ex.sets + ' set · ' + ex.detail[phase.id] + '</span></div>'
+      ).join('') + '</div>';
+  }
+  html += '<div class="banner danger">Bel ağrısı artarsa, bacağa/kalçaya vuran ağrı veya uyuşma olursa o günü durdur. Deadlift ve barbell squat programda hiç yok. Tüm çekme hacmi barfiks barında: Pull-up + Dead Hang.</div>';
+  return html;
+}
+
+function render(){
+  const view = document.getElementById('view');
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === activeTab));
+  if (activeTab === 'today') view.innerHTML = renderToday();
+  else if (activeTab === 'history') view.innerHTML = renderHistory();
+  else view.innerHTML = renderProgram();
+
+  if (activeTab === 'today'){
+    const entry = state.history[today];
+    if (!entry){
+      document.getElementById('pickHome').onclick = () => selectDay('home');
+      document.getElementById('pickOffice').onclick = () => selectDay('office');
+    } else {
+      document.querySelectorAll('.pill').forEach(p => {
+        p.onclick = () => tapSet(p.dataset.ex, Number(p.dataset.sets));
+      });
+      const fb = document.getElementById('finishBtn');
+      if (fb) fb.onclick = finishDay;
+      document.getElementById('changeToday').onclick = resetToday;
+    }
+  }
+}
+
+document.querySelectorAll('.tab').forEach(t => {
+  t.onclick = () => { activeTab = t.dataset.tab; render(); };
+});
+document.getElementById('skiprest').onclick = stopRest;
 document.getElementById('dateline').textContent = today + ' · ' + phase.label;
 document.getElementById('resetLink').onclick = () => {
   if (confirm('Tüm geçmiş ve ilerleme silinsin mi?')){
-    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(KEY_V2);
+    localStorage.removeItem(KEY_V1);
     state = {rotationIndex:0, history:{}};
-    renderPicker();
-    document.getElementById('historyCard').style.display = 'none';
+    render();
   }
 };
 
-if (state.history[today]) renderWorkout(); else renderPicker();
-renderHistory();
+render();
 </script>
 </body>
 </html>
